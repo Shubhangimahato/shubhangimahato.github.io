@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shubhangi Mahato — Portfolio</title>
+  <meta name="description" content="Shubhangi Mahato — Data Analyst / Data Engineer / Machine Learning Engineer / Business Analyst. Recent MCS grad (Dalhousie). Portfolio, skills, experience, and projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-i0wEoQ6k9m4jO2G1H1fQb1m9nB1qjz0dJH7q3q3kQ0lE8G3gW8f5fWm7qkG9mP1R7e8F9tC3u6Yh4lLqj1gYGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#0b1020;          /* page background */
+      --card:#121a33;        /* card background */
+      --muted:#9aa4bf;       /* muted text */
+      --text:#e8ecff;        /* primary text */
+      --brand:#7c5cff;       /* accent color */
+      --brand-2:#25d0a6;     /* secondary accent */
+      --ring:0 0 0 3px rgba(124,92,255,.25);
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;
+      color:var(--text); background:radial-gradient(1200px 600px at 10% -10%,rgba(124,92,255,.22),transparent 60%),
+                         radial-gradient(1000px 500px at 90% 10%,rgba(37,208,166,.18),transparent 55%),
+                         var(--bg);
+      line-height:1.6; letter-spacing:.15px;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{opacity:.9}
+
+    /* Header / Nav */
+    header{position:sticky; top:0; backdrop-filter:saturate(140%) blur(10px); background:rgba(11,16,32,.7); z-index:20; border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{max-width:var(--maxw); margin:auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand-logo{width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:var(--shadow)}
+    .brand h1{font-size:18px; margin:0; font-weight:800; letter-spacing:.5px}
+    nav ul{display:flex; list-style:none; gap:18px; padding:0; margin:0}
+    nav a{color:var(--text); font-weight:600}
+    .hire-btn{background:var(--brand); color:#0b1020; padding:10px 14px; border-radius:999px; font-weight:800; box-shadow:var(--shadow)}
+
+    /* Sections */
+    main{max-width:var(--maxw); margin:0 auto; padding:24px 20px 80px}
+    section{margin-top:70px}
+    .section-title{font-family:"Space Grotesk",Inter; font-size:28px; letter-spacing:.5px; margin:0 0 16px}
+    .muted{color:var(--muted)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:28px; margin-top:28px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0)); padding:26px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08)}
+    .hello{font-weight:700; color:var(--brand-2); letter-spacing:.8px}
+    .name{font-family:"Space Grotesk",Inter; font-size:46px; line-height:1.1; margin:6px 0 8px}
+    .roles{font-size:18px}
+    .roles .cursor{display:inline-block; width:1ch; background:currentColor; animation:blink 1.2s step-end infinite}
+    @keyframes blink{50%{background:transparent}}
+    .hero-cta{display:flex; gap:12px; margin-top:18px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05)}
+    .btn.primary{background:var(--brand); color:#0b1020; border:none}
+    .socials{display:flex; gap:12px; margin-top:14px}
+    .socials a{width:42px; height:42px; display:grid; place-items:center; background:rgba(255,255,255,.06); border-radius:10px; border:1px solid rgba(255,255,255,.1)}
+
+    .hero-aside{position:relative}
+    .hero-glow{position:absolute; inset:-12px; background:radial-gradient(300px 260px at 70% 20%,rgba(124,92,255,.4),transparent),
+                                       radial-gradient(280px 200px at 20% 70%,rgba(37,208,166,.35),transparent)}
+    .hero-img{position:relative; z-index:1; background:var(--card); border-radius:18px; border:1px solid rgba(255,255,255,.08); padding:18px; box-shadow:var(--shadow)}
+    .hero-img-inner{aspect-ratio:1/1; border-radius:12px; background:linear-gradient(135deg,rgba(124,92,255,.25),rgba(37,208,166,.25)); display:grid; place-items:center; font-size:120px}
+
+    /* Cards / Grid */
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+
+    /* Skills (category tiles) */
+    .skills-grid{display:grid; grid-template-columns:1fr; gap:16px; max-width:800px; margin:0 auto; text-align:center}
+    .skills-grid h3{margin:0 0 8px; font-size:16px}
+
+    /* Projects */
+    .projects{display:grid; gap:16px}
+    .project-row{display:grid; grid-template-columns:1.1fr 1.3fr; gap:16px; align-items:center}
+    .project-row .thumb{height:220px; border-radius:12px; background:linear-gradient(135deg,rgba(124,92,255,.25),rgba(37,208,166,.25)); border:1px solid rgba(255,255,255,.08)}
+    .project h3{margin:0 0 6px; font-size:20px}
+    .project .summary{margin:6px 0 8px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08)}
+
+    /* Experience */
+    .timeline{position:relative; padding-left:22px}
+    .timeline:before{content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background:linear-gradient(var(--brand),transparent)}
+    .timeitem{position:relative; margin-bottom:18px}
+    .timeitem:before{content:""; position:absolute; left:-16px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brand)}
+    .timeitem h3{margin:0 0 6px; font-size:18px}
+    .timeitem .when{font-size:13px; color:var(--muted)}
+
+    /* Contact */
+    form{display:grid; gap:12px; margin-top:6px}
+    input,textarea{background:#0e1530; color:var(--text); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:12px}
+    input:focus,textarea:focus{outline:none; box-shadow:var(--ring); border-color:var(--brand)}
+
+    /* Footer */
+    footer{max-width:var(--maxw); margin:40px auto; padding:0 20px 60px; color:var(--muted)}
+
+    /* Utilities */
+    .row{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .between{justify-content:space-between}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+      .skills-grid{grid-template-columns:1fr}
+      .project-row{grid-template-columns:1fr}
+    
+    }
+    @media (max-width: 640px){
+      .grid.cols-3{grid-template-columns:1fr}
+      .skills-grid{grid-template-columns:1fr}
+      .project-row{grid-template-columns:1fr}
+      .name{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <h1>Shubhangi Mahato</h1>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="Intro">
+      <div class="hero-card">
+        <div class="hello">HELLO, I'M</div>
+        <div class="name">Shubhangi Mahato</div>
+        <div class="roles"><span id="typewriter" aria-live="polite"></span><span class="cursor" aria-hidden="true"></span></div>
+        <p class="muted" style="margin-top:10px">Extroverted, impact‑driven professional and recent Master of Computer Science graduate from Dalhousie University. I turn messy data into clear decisions and build practical analytics & ML solutions across Python, SQL, and modern BI.</p>
+        
+        
+      </div>
+      <aside class="hero-aside" aria-hidden="true">
+        <div class="hero-glow"></div>
+        <div class="hero-img">
+          <div class="hero-img-inner">
+            <img src="1000214266.png" alt="Portrait of Shubhangi Mahato" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-label="About">
+      <h2 class="section-title">About</h2>
+      <div class="card">
+        <p>I’m <strong>Shubhangi Mahato</strong>, an extroverted and analytical thinker passionate about transforming data into strategic insights. A recent <strong>Master of Computer Science graduate from Dalhousie University</strong>, I specialize in data analytics, machine learning, and business intelligence. My work bridges technical precision with business value—helping organizations make smarter, evidence-based decisions through well-designed data pipelines, predictive models, and interactive dashboards. I enjoy combining technical skills with creativity to tell meaningful data stories that drive impact.</p>
+      </div>
+    </section>
+
+    <!-- Skills (categories) -->
+    <section id="skills" aria-label="Skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid" role="list" style="grid-template-columns:1fr">
+        <div class="card" role="listitem">
+          <h3>Methodologies</h3>
+          <p class="muted">Agile · Data‑Driven Decision Making · Time Series Analysis · Cross‑Validation · Scrum · Research‑Based Development</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Programming Languages</h3>
+          <p class="muted">Python · JavaScript · HTML/CSS · SQL · R · C · C++</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Frameworks & Libraries</h3>
+          <p class="muted">Detectron2 · Vision Transformer · YOLOv11 · Scikit‑learn · Pandas · NumPy · Matplotlib · OpenCV · TensorFlow · Pytest · PySpark</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Data Engineering</h3>
+          <p class="muted">Azure Databricks · Azure Data Factory · Delta Lake · Snowflake · SQL Server · PostgreSQL · MySQL</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Visualization & BI</h3>
+          <p class="muted">Power BI · Tableau · Excel · PowerPoint · Figma</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Databases</h3>
+          <p class="muted">PostgreSQL · MySQL · SQLite · MongoDB</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>IDEs</h3>
+          <p class="muted">Visual Studio Code · Jupyter Notebook · PyCharm · Eclipse · Android Studio · Google Colab</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-label="Experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="card timeline">
+        <div class="timeitem">
+          <h3>Market Research Intern — GamBit (BCI Gaming) <span class="muted">— Remote</span></h3>
+          <div class="when">Mar 2025 – May 2025</div>
+          <ul>
+            <li> Conducted strategic market research for Gamebit, a startup building inclusive and immersive gaming experiences through brain-computer interface (BCI) technology.</li>
+            <li>Identified key customer segments, analyzed competitors, and outlined feature opportunities to guide early product development and positioning.</li>
+          </ul>
+        </div>
+        <div class="timeitem">
+          <h3>Prompt Engineer — AI Training Project <span class="muted">— NS, Canada</span></h3>
+          <div class="when">Sep 2024 – Dec 2024</div>
+          <ul>
+            <li>Designed and optimized natural language prompts for Large Language Model (LLM) training across reasoning, safety, and creativity domains.</li>
+            <li>Applied Reinforcement Learning from Human Feedback (RLHF) for model alignment by scoring outputs on fluency, factuality, and bias mitigation, improving ethical compliance.</li>
+            <li>Collaborated with cross-functional research teams to integrate fine-tuning feedback loops into model retraining pipelines.</li>
+          </ul>
+        </div>
+        <div class="timeitem">
+          <h3>Business Strategy Intern — Dal Innovates <span class="muted">— NS, Canada</span></h3>
+          <div class="when">Jun 2024 – Sep 2024</div>
+          <ul>
+            <li>Conducted 60+ customer discovery interviews; validated assumptions and informed MVP scope meeting ~80% target needs.</li>
+            <li>Built KPI dashboards (Tableau) and analysis pipelines to drive product decisions and roadmap interlocks.</li>
+            <li>Aligned cross‑functional teams using Agile sprints and stakeholder presentations.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-label="Projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+        <!-- Thesis Project -->
+        <article class="card project">
+          <div class="project-row">
+            <div class="thumb" role="img" aria-label="Dairy DigiD thesis project" style="background:url('Colorful Clean 7 Point Mind Maps Brainstrom.png') center/cover"></div>
+            <div>
+              <h3>A Biometric Classification System for Dairy Cattle Using Detectron2 and YOLOv11 (Thesis)</h3>
+              <p class="muted summary">Non‑invasive AI system using 8,700+ labeled images from 600 cows. <strong>97.1% test accuracy</strong> with DenseNet121, ~<strong>93% weighted accuracy</strong> with Detectron2 facial landmarks, and <strong>0.951 mAP@50</strong> with YOLOv11 for real‑time image/video detection. Packaged with an interactive Gradio interface for field use.</p>
+              <div class="tags"><span class="tag">Detectron2</span><span class="tag">YOLOv11</span><span class="tag">DenseNet121</span><span class="tag">Gradio</span></div>
+              <div class="row" style="margin-top:10px">
+                <a class="btn" href="https://github.com/Shubhangimahato/Dairy-DigiD-Artificial-Intelligence-Powered-Facial-Recognition" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Tableau Project (moved up) -->
+        <article class="card project">
+          <div class="project-row">
+            <div class="thumb" role="img" aria-label="Tableau dashboard" style="background:url('Tableau.JPG') center/cover"></div>
+            <div>
+              <h3>British Airways Survey — Tableau Dashboard</h3>
+              <p class="muted summary">Designed and deployed an interactive Tableau dashboard visualizing passenger satisfaction, service quality, and on-time performance KPIs, enabling rapid insight into flight experience trends.</p>
+              <div class="tags"><span class="tag">Tableau</span><span class="tag">BI</span></div>
+              <div class="row" style="margin-top:10px">
+                <a class="btn" href="https://public.tableau.com/app/profile/shubhangi.mahato/viz/BritishAirwaySurvey/Dashboard1?publish=yes" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                <a class="btn" href="https://github.com/Shubhangimahato/Tableau_Dashboard-British_Airway_reviews" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                <a class="btn" href="https://www.youtube.com/watch?v=KlAKAarfLRQ" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Guide</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Other Projects -->
+        <article class="card project">
+          <div class="project-row">
+            <div class="thumb" role="img" aria-label="CIC IoT 2023 intrusion detection" style="background:url('CIT.png') center/cover"></div>
+            <div>
+              <h3>Cyberattacks on IoT Devices (CIC IoT 2023)</h3>
+              <p class="muted summary">Multi‑model classification (KNN, SVM, RF, XGBoost) for 18 classes / 4 attack types. <strong>98% accuracy</strong> (binary) and <strong>84%+</strong> (multi‑class) using ensembles.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Scikit‑learn</span><span class="tag">XGBoost</span></div>
+              <div class="row" style="margin-top:10px">
+                <a class="btn" href="https://github.com/mesopotamiaX/CSCI6711_Group7" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-row">
+            <div class="thumb" role="img" aria-label="NYC crime forecasting" style="background:url('Pause.png') center/cover"></div>
+            <div>
+              <h3>PAUSE — NYC Crime Forecasting</h3>
+              <p class="muted summary">ARIMA‑based short‑term forecasting with standardized preprocessing; ~<strong>90% accuracy</strong> for trend prediction to aid resource planning.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Time Series</span><span class="tag">ARIMA</span></div>
+              <div class="row" style="margin-top:10px">
+                <a class="btn" href="https://github.com/Shubhangimahato/Predictive-Analytics-for-Urban-Safety-Enhancement-PAUSE-" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-row">
+            <div class="thumb" role="img" aria-label="Heart disease analytics" style="background:url('Cardiocare.JPG') center/cover"></div>
+            <div>
+              <h3>CardioCare — Heart Disease Analytics</h3>
+              <p class="muted summary">EDA + Logistic Regression with > <strong>90% accuracy</strong>; demonstrating the potential to build scalable systems that could improve patient outcome predictions.</p>
+              <div class="tags"><span class="tag">Pandas</span><span class="tag">Logistic Reg.</span><span class="tag">Matplotlib</span></div>
+              <div class="row" style="margin-top:10px">
+                <a class="btn" href="https://github.com/Shubhangimahato/CardioCare-Heart-Disease-Classification" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" aria-label="Publications">
+      <h2 class="section-title">Publications</h2>
+      <div class="card timeline">
+        <div class="timeitem">
+          <h3>Dairy DigiD: An Edge‑Cloud Framework for Real‑Time Cattle Biometrics and Health Classification</h3>
+          <div class="when">MDPI · Aug 22, 2025</div>
+          <div class="row" style="margin-top:8px">
+            <a class="btn" href="https://www.mdpi.com/2673-2688/6/9/196" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Open</a>
+          </div>
+        </div>
+        <div class="timeitem">
+          <h3>Dairy DigiD: a keypoint‑based deep learning system for classifying dairy cattle by physiological and reproductive status</h3>
+          <div class="when">Frontiers · Aug 21, 2025</div>
+          <div class="row" style="margin-top:8px">
+            <a class="btn" href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1545247/full" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Open</a>
+          </div>
+        </div>
+        <div class="timeitem">
+          <h3>Integrating Artificial Intelligence in dairy farm management − biometric facial recognition for cows</h3>
+          <div class="when">Elsevier · Oct 9, 2024</div>
+          <div class="row" style="margin-top:8px">
+            <a class="btn" href="https://www.sciencedirect.com/science/article/pii/S2214317324000696?via%3Dihub" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Open</a>
+          </div>
+        </div>
+        <div class="timeitem">
+          <h3>A REVIEW ON TECHNOLOGICAL INNOVATION IN BUSINESS AND ORGANIZATION CONTINUITY</h3>
+          <div class="when">International Journal of Research and Analytical Reviews (IJRAR) · Mar 23, 2022</div>
+          <div class="row" style="margin-top:8px">
+            <a class="btn" href="https://ijrar.org/viewfull.php?&p_id=IJRAR22A2423" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Open</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" aria-label="Certifications">
+      <h2 class="section-title">Certifications</h2>
+      <div class="card timeline">
+        <div class="timeitem">
+          <h3>Fundamentals of Cloud Computing with Azure</h3>
+          <div class="when">Aug 2025</div>
+        </div>
+        <div class="timeitem">
+          <h3>SQL for Data Science</h3>
+          <div class="when">Mar 2023</div>
+        </div>
+        <div class="timeitem">
+          <h3>Google Data Analytics Certification Program</h3>
+          <div class="when">Jun 2022</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-label="Contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>Reach out for collaboration or opportunities:</p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:shubhangimahato22@gmail.com">shubhangimahato22@gmail.com</a><br>
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shubhangimahato22/" target="_blank" rel="noopener">linkedin.com/in/shubhangimahato22</a><br>
+          <strong>GitHub:</strong> <a href="https://github.com/Shubhangimahato" target="_blank" rel="noopener">github.com/Shubhangimahato</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="row between">
+      <div>© <span id="year"></span> Shubhangi Mahato</div>
+      <div>Built with ❤️ — <a href="#home">Back to top</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
+      })
+    })
+
+    // Simple typewriter for roles
+    const roles=[
+      'Data Analyst',
+      'Data Engineer',
+      'Machine Learning Engineer',
+      'Business Analyst'
+    ];
+    let r=0,c=0,del=false;
+    const el=document.getElementById('typewriter');
+    function tick(){
+      const text=roles[r];
+      if(!del){ c++; } else { c--; }
+      el.textContent=text.slice(0,c);
+      if(!del && c===text.length){ del=true; setTimeout(tick,1200); return; }
+      if(del && c===0){ del=false; r=(r+1)%roles.length; }
+      setTimeout(tick, del?45:70);
+    }
+    tick();
+
+    // Fake contact form handler (no backend)
+    function handleSubmit(e){
+      e.preventDefault();
+      const status=document.getElementById('form-status');
+      status.textContent='Sending…';
+      setTimeout(()=>{ status.textContent='Thanks! Your message has been noted.'; e.target.reset(); }, 800);
+    }
+
+    // Current year
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Reveal on scroll (intersection observer)
+    const reveal=(entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.style.transform='none'; en.target.style.opacity='1'; } }) };
+    const io=new IntersectionObserver(reveal,{threshold:.12});
+    document.querySelectorAll('.card,.project,.hero-card,.hero-img').forEach(el=>{
+      el.style.opacity='.001'; el.style.transform='translateY(12px)'; io.observe(el);
+    });
+  </script>
+</body>
+</html>
